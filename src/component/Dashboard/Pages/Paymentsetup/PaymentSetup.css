@@ -1,0 +1,72 @@
+
+.payment{
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-top: 12px;
+    font-size: 13px;
+    margin-left: 30px;
+}
+.payment h6{
+    padding-bottom: 8px;
+    font-size: 0.9rem;
+    color: #000;
+}
+.payment label{
+    margin-left: 6px;
+}
+.form-check .form-check-input{
+    float: initial;
+    margin-left: -10px;
+ 
+}
+.payment-status{
+padding-right: 35%;
+}
+ .payment-status .form-check-input[type=checkbox] {
+    border-radius: 100%;
+}
+.form-check {
+    padding-left: 10px;
+}
+
+.payment-mode .check-box{
+    margin-top: 5px;
+}
+.payment-status .payment-box{
+    margin-top: 5px;
+}
+.form-group #input-b{
+    width: 95%;
+}
+
+
+@media screen and (max-width:800px){
+    .form-group #input-b{
+        width: 88%;
+    }
+    .form-group #input-d{
+        width: 24%;
+
+    }
+    .form-group{
+        /* margin-left: -7px; */
+        margin: 0 auto;
+    }
+    .payment{
+        /* display: grid; */
+        width: 100%;
+        margin: 0 12px;
+        padding: 0px;
+        font-size: 15px;
+        padding-top: 30px;
+    }
+    .payment-mode{
+        display: grid;
+    }
+    .payment-status{
+        display: grid;
+        padding-right: 30px;
+
+    }
+}

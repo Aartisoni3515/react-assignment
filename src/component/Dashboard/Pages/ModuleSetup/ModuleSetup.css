@@ -1,0 +1,152 @@
+.module-inputs input {
+  display: initial;
+  width: auto;
+  /* margin-left: 20px; */
+  /* width: 2%; */
+  margin-right: 10px;
+}
+.modules {
+  display: flex;
+  justify-content: space-evenly;
+}
+.module-inputs {
+  width: 25%;
+  /* background-color: aliceblue; */
+}
+.modules input {
+  width: auto;
+}
+.modules input:hover {
+  background: #153ac7;
+}
+.custom-control {
+  margin-top: -10px;
+  padding-top: 0px;
+}
+.module-inputs .custom-control {
+  width: 100%;
+}
+.modules .custom-control label {
+  margin-left: 10px;
+  font-size: 13px;
+}
+.module-inputs .custom-control:hover {
+  background: #153ac7;
+  border-radius: 5px;
+}
+
+.sub-modules {
+  height: 350px;
+  width: 70%;
+  float: left;
+  border: 1px solid rgba(3, 0, 55, 0.08);
+  box-shadow: 0px 2px 2px 0px;
+  padding-left: 20px;
+}
+.head-btn {
+  display: flex;
+  justify-content: space-between;
+}
+.heading h6 {
+  font-size: 15px;
+  padding-top: 5px;
+}
+.heading p {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+.client-btn button {
+  border: 1px solid #153ac7;
+  background: #153ac7;
+  margin: 10px 10px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label {
+  font-size: 12px;
+  line-height: 2px;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  height: 2px;
+  padding: 0px;
+}
+.MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root {
+  height: 2px;
+  padding: 0px;
+}
+.css-i4bv87-MuiSvgIcon-root {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  fill: currentColor;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-size: 1.5rem;
+}
+.MuiSvgIcon-root {
+  width: 20px;
+  height: 20px;
+}
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
+  
+  color: inherit;
+  padding: 0px;
+  border-radius: 50%;
+  color: rgba(0, 0, 0, 0.6);
+}
+.logsheet .log-inp label{
+  padding: 0px;
+
+}
+
+.logsheet .log-inp {
+  font-size: 5px;
+  padding: 0px;
+}
+.MuiButtonBase-root{
+  padding: 0;
+}
+@media screen and (max-width:800px) {
+
+  .modules{
+    display: flex;
+  }
+  .module-inputs{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .sub-modules {
+    height: 450px;
+    width: 50%;
+    float: left;
+    border: 1px solid rgba(3, 0, 55, 0.08);
+    box-shadow: 0px 2px 2px 0px;
+    padding-left: 20px;
+}
+.head-btn{
+  display: grid;
+}
+
+.heading p {
+  font-size: 12px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+.client-btn button {
+  border: 1px solid #153ac7;
+  background: #153ac7;
+  margin: 4px 0px;
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+  
+}

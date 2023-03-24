@@ -1,0 +1,256 @@
+.mynav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  padding-top: 10px;
+}
+a {
+  text-decoration: none;
+  color: #939596;
+}
+.mynav li {
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #939596;
+
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 170%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  top: 38px;
+  left: -50px;
+  background-color: #153ac7;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.CreateProfile{
+	padding-left: 20px;
+	font-size: 12px;
+	color: #939596;
+	text-transform: capitalize;
+}
+.CreateProfile h3{
+	font-size: 1.1rem;
+	color: #000;
+	font-weight: bold;
+
+}
+.file{
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 20px;
+
+}
+.file span{
+	text-align: center;
+}
+.files{
+	width: 65px;
+	height: 65px;
+	border: 1px solid #939596;
+	border-radius: 50%;
+	text-align: center;
+}
+.file-para{
+	padding-left: 30px;
+	font-size: 11px;
+	color: #939596;
+	padding-top: 10px;
+}
+.file-para h4{
+	font-size: 15px;
+	color: #000;
+}
+.form-group{
+	height: 270px;
+	display:flex;
+	flex-wrap: wrap;
+	margin-top: -10px;
+	/* overflow: hidden; */
+}
+.form-group  #input-c{
+	width: 33%;
+	text-align: left;
+}
+.form-group #input-p{
+	width: 10%;
+}
+.form-group input{
+	width: 46%;
+	/* padding: 20px; */
+	font-size: 13px;
+	text-transform: capitalize;
+	margin-left: 30px;
+}	
+.form-group .form-select{
+	width: 46%;
+	height: 35px;
+	margin-top: 20px;
+	margin-left:30px ;
+	font-size: 13px;
+	color: #939596;
+	text-transform: capitalize;
+}
+.form-group .form-type{
+	width: 46%;
+	height: 35px;
+	margin-top: 20px;
+	margin-left:30px ;
+	font-size: 13px;
+	color: #939596;
+	text-transform: capitalize;
+	display: block;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+	padding: 0 10px;
+}
+.Buttons{
+	display: flex;
+	margin-left: 30px;
+	margin-top: 20px;
+	font-size: 13px;
+}
+.btn-2{
+	background: #153ac7;
+	color: #ffff;
+	width: 14%;
+	border-radius: 8px;
+	padding: 5px ;
+	margin-right: 3px;
+	
+}
+.reset{
+	color: #686687;
+	background: white;
+	padding: 5px 10px;
+	border: white;
+	font-size: 14px;
+}
+.reset:hover{
+	background: white;
+	color: #686687;
+
+}
+.form-group #form-s{
+	width: 33%;
+}
+@media screen and (max-width:800px){
+	.mynav ul {
+		display: flex;
+		align-items: flex-start;
+		padding-left: 0px;
+		text-align: center;
+		color: #939596;
+
+	  }
+	  .mynav li{
+		font-size: 15px;
+		padding: 0;
+		margin: 0;
+
+	  }
+	 
+	  hr{
+		display: none;
+	  }
+
+	  .hover-underline-animation::after {
+		content: "";
+		position: absolute;
+		width: 40%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		top: 38px;
+		/* left: -50px; */
+		background-color: #153ac7;
+		transform-origin: bottom right;
+		transition: transform 0.25s ease-out;
+	  }
+	  .file-para{
+		padding-left: 5px;
+		
+	}
+
+	.form-group{
+		height: 270px;
+		width: 100%;
+		display:flex;
+		flex-wrap: wrap;
+		
+	}
+	.form-group input{
+		width: 40%;
+		/* padding: 20px; */
+		font-size: 13px;
+		text-transform: capitalize;
+		margin-left: 30px;
+	}	
+	.form-group .form-select{
+		width: 40%;
+		height: 35px;
+		margin-top: 20px;
+		margin-left:30px ;
+		font-size: 13px;
+		color: #939596;
+		text-transform: capitalize;
+	}
+	.form-group .form-type{
+		width: 46%;
+		height: 35px;
+		margin-top: 20px;
+		margin-left:30px ;
+		font-size: 13px;
+		color: #939596;
+		text-transform: capitalize;
+		display: block;
+		background-color: #fff;
+		border: 1px solid #ced4da;
+		border-radius: 0.375rem;
+		padding: 0 10px;
+	}
+	.form-group  #input-c{
+		width: 40%;
+		text-align: left;
+	}
+	.form-group #input-p{
+		width: 40%;
+	}
+	.form-group #input-f{
+		width: 25%;
+	}
+	.Buttons{
+		/* justify-content: flex-end; */
+		margin-top: 10px;
+
+	}
+
+	.btn-2 {
+		background: #153ac7;
+		color: #ffff;
+		width: 46%;
+		border-radius: 8px;
+		padding: 5px;
+		margin-right: 3px;
+	}
+	.create-profile .Buttons{
+		margin-top: 100px;
+	}
+
+}
