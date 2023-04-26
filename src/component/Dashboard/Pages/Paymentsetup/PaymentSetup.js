@@ -1,12 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
 import Routes from "../Routes";
 import Form from "react-bootstrap/Form";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
 import { MDBCheckbox } from "mdb-react-ui-kit";
 import "./PaymentSetup.css";
+import { useNavigate } from "react-router-dom";
 
 const PaymentSetup = () => {
+  let navigate = useNavigate();
+
+  const [user, setUser] = useState({
+    BillAdd: "",
+    site: "",
+    pincode: "",
+    Amount: "",
+    Discount: "",
+    Reason: "",
+    State: "",
+    City: "",
+
+  });
+
+  const [data, setData] = useState([]);
+  console.log(user);
+
+  const handleInputs = (e) => {
+    const { value, name } = e.target;
+
+    setUser(() => {
+      return {
+        ...user,
+        [name]: value,
+      };
+    });
+  };
+
+  const addData = (e) => {
+    // console.log("signup");
+    e.preventDefault();
+    console.log("data added succesfully");
+    window.confirm("Confirm User Details");
+    navigate("/themesetup");
+    localStorage.setItem("userData", JSON.stringify([...data, user]));
+  };
+
+  const resetData = (e) => {
+    console.log("reset");
+    const { value, name } = e.target;
+
+    setUser(() => {
+      return {
+        ...user,
+        [""]: "",
+      };
+    });
+  };
+
   return (
     <>
       <div className="DashBoard">
@@ -33,10 +83,16 @@ const PaymentSetup = () => {
               type="text"
               className="form-type"
               id="input-b"
+              value={user.BillAdd}
+              onChange={handleInputs}
+              name="BillAdd"
             />
             <Form.Select
               className="form-select"
               aria-label="Default select example"
+              value={user.State}
+              onChange={handleInputs}
+              name="State"
             >
               <option>Select State</option>
               <option value="1">Maharastra</option>
@@ -47,6 +103,9 @@ const PaymentSetup = () => {
               className="form-select"
               aria-label="Default select example"
               id="input-c"
+              value={user.City}
+              onChange={handleInputs}
+              name="City"
             >
               <option>Select City</option>
               <option value="1">Maharastra</option>
@@ -59,13 +118,19 @@ const PaymentSetup = () => {
               type="text"
               className="form-type"
               id="input-p"
+              value={user.pincode}
+              onChange={handleInputs}
+              name="pincode"
             />
 
             <Form.Select
               className="form-select"
               aria-label="Default select example"
+              value={user.site}
+              onChange={handleInputs}
+              name="site"
             >
-              <option>Select City</option>
+              <option>Select Number of Site Access</option>
               <option value="1">Maharastra</option>
               <option value="2">Rajashthan</option>
               <option value="3">Kerala</option>
@@ -73,19 +138,24 @@ const PaymentSetup = () => {
 
             <input
               required
-              placeholder="Discount"
+              placeholder="rs Payable Amount per site"
               type="text"
               className="form-type"
               id="input-d"
-
+              value={user.Amount}
+              onChange={handleInputs}
+              name="Amount"
             />
 
             <input
               required
-              placeholder="Discount"
+              placeholder="Discount(%)"
               type="text"
               className="form-type"
               id="input-d"
+              value={user.Discount}
+              onChange={handleInputs}
+              name="Discount"
             />
             <input
               required
@@ -93,6 +163,9 @@ const PaymentSetup = () => {
               type="text"
               className="form-type"
               id="input-d"
+              value={user.Reason}
+              onChange={handleInputs}
+              name="Reason"
             />
           </div>
 
@@ -161,11 +234,11 @@ const PaymentSetup = () => {
             </div>
           </div>
           <div className="Buttons">
-            <button className="btn-2">
+            <button onClick={addData} className="btn-2">
               Save & Continue
               <MdKeyboardArrowRight style={{ fontSize: "20px" }} />{" "}
             </button>
-            <button className="reset">
+            <button onClick={resetData} className="reset">
               <GrPowerReset /> Reset
             </button>
           </div>

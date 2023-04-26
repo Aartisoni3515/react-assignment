@@ -3,18 +3,60 @@ import Routes from "../Routes";
 import Form from "react-bootstrap/Form";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { GrPowerReset } from "react-icons/gr";
+import { useNavigate } from "react-router-dom";
 
 const CreateProfile = () => {
-  const [items, setItems] = useState([]);
+  let navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    console.log("signup");
-    e.preventDefault();
-    localStorage.setItem("items", JSON.stringify(items));
+  const [user, setUser] = useState({
+    ComName: "",
+    website: "",
+    email: "",
+    number: "",
+    pincode: "",
+    gstNum: "",
+    faxNum: "",
+    BussCat: "",
+    facMan: "",
+    State: "",
+    City: "",
+  });
+
+  const [data, setData] = useState([]);
+  console.log(user);
+
+  const handleInputs = (e) => {
+    const { value, name } = e.target;
+
+    setUser(() => {
+      return {
+        ...user,
+        [name]: value,
+      };
+    });
   };
-  useEffect(() => {}, [items]);
 
- 
+  const addData = (e) => {
+    // console.log("signup");
+    e.preventDefault();
+    console.log("data added succesfully");
+    window.confirm("Confirm User Details");
+    navigate("/paymentsetup");
+    localStorage.setItem("userData", JSON.stringify([...data, user]));
+  };
+
+  const resetData = (e) => {
+    console.log("reset");
+    const { value, name } = e.target;
+
+    setUser(() => {
+      return {
+        ...user,
+        [""]: "",
+      };
+    });
+  };
+
   return (
     <>
       <div className="DashBoard">
@@ -59,24 +101,33 @@ const CreateProfile = () => {
                 <p>Logo ratio should be 1:1 and should be 120px X 120px</p>
               </div>
             </div>
-            <form value={items} onSubmit={handleSubmit}>
+            <form>
               <div className="form-group">
                 <input
                   required
                   placeholder="Company Name"
                   type="text"
                   className="form-control"
+                  value={user.ComName}
+                  onChange={handleInputs}
+                  name="ComName"
                 />
 
                 <input
                   required
-                  placeholder="Website"
+                  placeholder="website"
                   type="text"
                   className="form-control"
+                  value={user.website}
+                  onChange={handleInputs}
+                  name="website"
                 />
                 <Form.Select
                   className="form-select"
                   aria-label="Default select example"
+                  value={user.BussCat}
+                  onChange={handleInputs}
+                  name="BussCat"
                 >
                   <option>select business category</option>
                   <option value="1">One</option>
@@ -86,6 +137,9 @@ const CreateProfile = () => {
                 <Form.Select
                   className="form-select"
                   aria-label="Default select example"
+                  value={user.facMan}
+                  onChange={handleInputs}
+                  name="facMan"
                 >
                   <option>select facility management company</option>
                   <option value="1">One</option>
@@ -98,16 +152,25 @@ const CreateProfile = () => {
                   placeholder="Company Email Address"
                   type="text"
                   className="form-control"
+                  value={user.email}
+                  onChange={handleInputs}
+                  name="email"
                 />
                 <input
                   required
                   placeholder="Mobile Number"
                   type="number"
                   className="form-control"
+                  value={user.number}
+                  onChange={handleInputs}
+                  name="number"
                 />
                 <Form.Select
                   className="form-select"
                   aria-label="Default select example"
+                  value={user.State}
+                  onChange={handleInputs}
+                  name="State"
                 >
                   <option>Select State</option>
                   <option value="1">Maharastra</option>
@@ -118,8 +181,11 @@ const CreateProfile = () => {
                   className="form-select"
                   aria-label="Default select example"
                   id="form-s"
+                  value={user.City}
+                  onChange={handleInputs}
+                  name="City"
                 >
-                  <option>Select State</option>
+                  <option>Select City</option>
                   <option value="1">Maharastra</option>
                   <option value="2">Rajashthan</option>
                   <option value="3">Kerala</option>
@@ -130,28 +196,37 @@ const CreateProfile = () => {
                   placeholder="Pincode"
                   type="text"
                   className="form-control"
+                  value={user.pincode}
+                  onChange={handleInputs}
                   id="input-p"
+                  name="pincode"
                 />
                 <input
                   required
                   placeholder="GST Number"
                   type="text"
                   className="form-control"
+                  value={user.gstNum}
+                  onChange={handleInputs}
+                  name="gstNum"
                 />
                 <input
                   required
                   placeholder="Fax Number"
                   type="text"
                   className="form-control"
+                  value={user.faxNum}
+                  onChange={handleInputs}
                   id="input-f"
+                  name="faxNum"
                 />
               </div>
               <div className="Buttons">
-                <button value={items} onClick={handleSubmit} className="btn-2">
+                <button onClick={addData} className="btn-2">
                   Save & Continue
                   <MdKeyboardArrowRight style={{ fontSize: "20px" }} />{" "}
                 </button>
-                <button className="reset">
+                <button onClick={resetData} className="reset">
                   {" "}
                   <GrPowerReset /> Reset
                 </button>

@@ -108,7 +108,7 @@ const ModuleSetup = () => {
                 </div>
 
                 <div className="client-btn">
-                  <button>View to client</button>
+                  <button>View to client</button> 
                 </div>
               </div>
 

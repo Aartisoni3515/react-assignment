@@ -6,9 +6,9 @@ import ThemeSetup from "./component/Dashboard/Pages/ThemeSetup/ThemeSetup";
 import ModuleSetup from "./component/Dashboard/Pages/ModuleSetup/ModuleSetup";
 import SideBar from "./component/Dashboard/SideBar";
 import AddClient from "./component/Dashboard/AddClient/AddClient";
-// import SignUp from "./component/SignUp";
+import SignUp from "./component/SignUp";
 import PageContent from "./component/Dashboard/Pages/PageContent";
-import Home from "./component/Home";
+// import Home from "./component/Home";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
       {/* <Home/> */}
         <Routes>
-          {/* <Route path="/" element={<SignUp />} /> */}
+          <Route path="/" element={<SignUp />} />
           <Route path="/pagecontent" element={<PageContent />} />
           <Route path="/addclient" element={<AddClient />} />
           <Route path="/Createprofile" element={<CreateProfile />} />
@@ -26,6 +26,7 @@ function App() {
           <Route path="/modulesetup" element={<ModuleSetup />} />
         </Routes>
       <SideBar/>
+
       </BrowserRouter>
     </>
   );
